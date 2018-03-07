@@ -1,0 +1,86 @@
+gap> Read("workshop.h");
+gap> n := 9;
+9
+gap> S := SymmetricGroup(n);
+Sym( [ 1 .. 9 ] )
+gap> A := AlternatingGroup(n);
+Alt( [ 1 .. 9 ] )
+gap> D := DihedralGroup(2*n);
+<pc group of size 18 with 3 generators>
+gap> AvgOrderOfGroup(S);
+3291487/362880
+gap> AvgOrderOfGroup(A);
+1516831/181440
+gap> AvgOrderOfGroup(D);
+79/18
+gap> Test("AvgOrderTest.txt");
+Error, Cannot read file AvgOrderTest.txt
+ called from
+<function "Test">( <arguments> )
+ called from read-eval loop at line 14 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> Test("AvgOrderTest.tst");
+true
+gap> Read("workshop.h");
+gap> Test("AvgOrderTest.tst");
+########> Diff in AvgOrderTest.tst, line 9:
+# Input is:
+AvgOrderOfGroup(S);
+# Expected output:
+3291487/362880
+# But found:
+9.07046
+########
+########> Diff in AvgOrderTest.tst, line 11:
+# Input is:
+AvgOrderOfGroup(A);
+# Expected output:
+1516831/181440
+# But found:
+8.35996
+########
+########> Diff in AvgOrderTest.tst, line 13:
+# Input is:
+AvgOrderOfGroup(D);
+# Expected output:
+79/18
+# But found:
+4.38889
+########
+false
+gap> S := SymmetricGroup(7);
+Sym( [ 1 .. 7 ] )
+gap> A := AlternatingGroup(14);
+Alt( [ 1 .. 14 ] )
+gap> S := SymmetricGroup(7);
+Sym( [ 1 .. 7 ] )
+gap> S := SymmetricGroup(7);;
+gap> A := AlternatingGroup(7);;
+gap> D := DihedralGroup(14);;
+gap> AvgOrderOfGroup(S);
+6.21687
+gap> AvgOrderOfGroup(A);
+5.0004
+gap> AvgOrderOfGroup(D);
+4.07143
+gap> Test("AvgOrderTest2.tst");
+true
+gap> AvgOrderOfGroup;
+function( G ) ... end
+gap> SL(2,5);
+SL(2,5)
+gap> G := GeneratorsOfGroup(SL(2,5));
+[ [ [ Z(5), 0*Z(5) ], [ 0*Z(5), Z(5)^3 ] ], 
+  [ [ Z(5)^2, Z(5)^0 ], [ Z(5)^2, 0*Z(5) ] ] ]
+gap> Elements(G);
+[ [ [ Z(5), 0*Z(5) ], [ 0*Z(5), Z(5)^3 ] ], 
+  [ [ Z(5)^2, Z(5)^0 ], [ Z(5)^2, 0*Z(5) ] ] ]
+gap> Display(last2);
+[ [ [ Z(5), 0*Z(5) ], [ 0*Z(5), Z(5)^3 ] ], 
+  [ [ Z(5)^2, Z(5)^0 ], [ Z(5)^2, 0*Z(5) ] ] ]
+gap> Display( last[1]);
+ 2 .
+ . 3
+gap> 
